@@ -31,3 +31,36 @@ int main() {
 	return 0; 
 }
 ```
+## p21 13
+```
+#pragma GCC optimize(3, "Ofast", "inline")
+#include <bits/stdc++.h>
+#define start ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+#define rep(z, x, y) for(int z=x;z<=y;++z)
+#define repd(z, x, y) for(int z=x;z>=y;--z)
+typedef long long ll;
+const int maxn = (ll) 2e5 + 5;
+const int mod = 998244353;
+const int inf = 0x3f3f3f3f;
+using namespace std;
+int n;
+int a[maxn];
+bool b[maxn];
+int main() { 
+	start;
+	cin>>n;
+	rep(i,1,n){
+		cin>>a[i];
+		if(a[i] && a[i] <= n) b[a[i]] = 1;
+	}
+	int ans = 0;
+	rep(i,1,n){
+		if(!b[i]){
+			ans = i;break;
+		}
+	}
+	if(!ans) ans = n+1;
+	cout<<ans;
+	return 0; 
+}
+```
